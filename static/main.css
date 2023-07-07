@@ -1,7 +1,10 @@
+body {
+    background-image: url('svg/blurry-gradient.svg');
+}
+
 #mainWrap {
     width: calc(100% - 75px);
     height: 100vh;
-    background-image: url('svg/blurry-gradient.svg');
     color: white;
     float: right;
 }
@@ -9,4 +12,44 @@
 #mainContent {
     padding-top: 20px;
     padding-left: 20px;
+}
+
+.widgetWrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.widget {
+    background-color: rgba(255, 255, 255, 0.308);
+    padding: 10px;
+    width: 40%;
+    border-radius: 10px;
+}
+
+.widget:first-child {
+    margin-right: 9%;
+}
+
+.planEntry {
+    padding: 10px;
+}
+
+.entryIcon {
+    width: 30px;
+    font-size: 20px;
+    color: white;
+}
+
+.entryDesc {
+    width: calc(100% - 30px);
+    color: white;
+}
+
+.entryDesc h3 {
+    font-size: large;
+    font-weight: normal;
+}
+
+.entryDesc p {
+    font-size: small;
 }
