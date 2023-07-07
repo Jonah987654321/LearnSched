@@ -1,0 +1,12 @@
+#mainWrap {
+    width: calc(100% - 75px);
+    height: 100vh;
+    background-image: url('svg/blurry-gradient.svg');
+    color: white;
+    float: right;
+}
+
+#mainContent {
+    padding-top: 20px;
+    padding-left: 20px;
+}
