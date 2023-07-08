@@ -27,7 +27,8 @@ body {
 }
 
 .widget:first-child {
-    margin-right: 9%;
+    margin-right: 5%;
+    margin-left: calc(4% - 20px);
 }
 
 .planEntry {

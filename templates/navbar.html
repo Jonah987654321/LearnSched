@@ -1,19 +1,25 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
 
 <div id="navbarWrap">
-    <div class="navbarEntry active">
+    <div class="navbarEntry" onclick="window.location.href='/overview/'" id="overview">
         <i class="fa-solid fa-house"></i>
     </div>
-    <div class="navbarEntry">
+    <div class="navbarEntry" onclick="window.location.href='/todos/'" id="todos">
         <i class="fa-solid fa-check"></i>
     </div>
-    <div class="navbarEntry">
+    <div class="navbarEntry" onclick="window.location.href='/calendar/'" id="calendar">
         <i class="fa-solid fa-calendar"></i>
     </div>
-    <div class="navbarEntry">
+    <div class="navbarEntry" onclick="window.location.href='/timer/'" id="timer">
         <i class="fa-solid fa-clock"></i>
     </div>
-    <div class="navbarEntry bottomEntry">
+    <div class="navbarEntry bottomEntry" onclick="window.location.href='/settings/'" id="settings">
         <i class="fa-solid fa-user"></i>
     </div>
 </div>
+
+<script>
+    splittedURL = window.location.href.split("/");
+    pageName = splittedURL[splittedURL.length - 2];
+    document.getElementById(pageName).classList.toggle("active");
+</script>
