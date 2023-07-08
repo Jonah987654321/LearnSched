@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your ToDos | LearnSched</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='basic.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='todos.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/load/all.css') }}">
+    </head>
+    <body>
+        {% include "navbar.html" %}
+        <div id="mainWrap">
+            <div id="listsWrap">
+                <div class="alignCenter">
+                    <h2>Your To-Do Lists</h2>
+                </div>
+                <div class="spaceVert"></div>
+
+                <div class="listEntry">
+                    <table class="w-full">
+                        <tr class="w-full">
+                            <td class="entryIcon">
+                                <i class="fa-solid fa-list-check"></i>
+                            </td>
+                            <td class="entryDesc">
+                                <h3>All tasks</h3>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="listEntry">
+                    <table class="w-full">
+                        <tr class="w-full">
+                            <td class="entryIcon">
+                                <i class="fa-solid fa-book"></i>
+                            </td>
+                            <td class="entryDesc">
+                                <h3>Studies</h3>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="listEntry">
+                    <table class="w-full">
+                        <tr class="w-full">
+                            <td class="entryIcon">
+                                <i class="fa-regular fa-star"></i>
+                            </td>
+                            <td class="entryDesc">
+                                <h3>Important</h3>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+            <div id="listContentWrap">
+                <h1>Studies</h1>
+                
+                <div class="entriesWrap">
+
+                    <div class="planEntry">
+                        <table class="w-full">
+                            <tr class="w-full">
+                                <td class="entryIcon">
+                                    <i class="fa-regular fa-circle"></i>
+                                </td>
+                                <td class="entryDesc">
+                                    <h3>Math Assignment</h3>
+                                    <p>Due to July 14th, 08:00 AM</p>
+                                </td>
+                                <td class="optionIcons">
+                                    <i class="fa-solid fa-pen"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="planEntry">
+                        <table class="w-full">
+                            <tr class="w-full">
+                                <td class="entryIcon">
+                                    <i class="fa-regular fa-circle"></i>
+                                </td>
+                                <td class="entryDesc">
+                                    <h3>Finish PC Build</h3>
+                                    <p>Due to July 14th, 08:00 AM</p>
+                                </td>
+                                <td class="optionIcons">
+                                    <i class="fa-solid fa-pen"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="spaceVert"></div>
+                    <h4>Finished:</h4>
+
+                    <div class="planEntry done">
+                        <table class="w-full">
+                            <tr class="w-full">
+                                <td class="entryIcon">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </td>
+                                <td class="entryDesc">
+                                    <h3>Science paper</h3>
+                                </td>
+                                <td class="optionIcons">
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="newEntry">
+                    <table class="w-full">
+                        <tr class="w-full">
+                            <td class="entryIcon">
+                                <i class="fa-regular fa-circle"></i>
+                            </td>
+                            <td class="entryDesc">
+                                <input type="text" id="newTDContent" name="newTDContent" placeholder="Add a new task...">
+                            </td>
+                            <td class="optionIcons">
+                                <i class="fa-regular fa-calendar"></i>
+                                <i class="fa-regular fa-bell"></i>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    </body>
+</html>
