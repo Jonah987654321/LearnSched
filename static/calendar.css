@@ -1,0 +1,62 @@
+#mainWrap {
+    width: calc(100% - 75px);
+    height: 100vh;
+    color: white;
+    float: right;
+}
+
+#dateOverview {
+    width: 12%;
+    float: left;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.308);
+}
+
+#monthDisplay {
+    width: 88%;
+    float: right;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.dayDisplayDetail {
+    width: 13%;
+    text-align: center;
+}
+
+.dayContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.dayDisplayRound {
+    width: 13%;
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px 0 5px 0;
+    border-radius: 20px;
+}
+
+.dayDisplayRound:not(.dateHeader, .today):hover {
+    background-color: rgba(128, 128, 128, 0.356);
+    cursor: pointer;
+}
+
+.today {
+    background-color: gray;
+}
+
+.otherMonth {
+    color: rgba(255, 255, 255, 0.404);
+}
+
+.dateHeader {
+    margin-bottom: 5px;
+    font-size: smaller;
+}
