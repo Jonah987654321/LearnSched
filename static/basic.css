@@ -15,3 +15,7 @@
 .alignCenter {
     text-align: center;
 }
+
+body {
+    background-image: url('svg/blurry-gradient.svg');
+}

@@ -1,7 +1,3 @@
-body {
-    background-image: url('svg/blurry-gradient.svg');
-}
-
 #mainWrap {
     width: calc(100% - 75px);
     height: 100vh;
