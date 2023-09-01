@@ -24,8 +24,9 @@
 }
 
 .dayDisplayDetail {
-    width: 13%;
+    width: 14.162%;
     text-align: center;
+    border: 1px white solid;
 }
 
 .dayContainer {
