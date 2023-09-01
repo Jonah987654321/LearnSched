@@ -17,3 +17,11 @@ def todos():
 @main.route("/calendar/")
 def calendar():
     return render_template('calendar.html')
+
+@main.route("/timer/")
+def timer():
+    return "Timer"
+
+@main.route("/settings/")
+def settings():
+    return "Settings"

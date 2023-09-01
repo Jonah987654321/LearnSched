@@ -1,7 +1,7 @@
 
 # LearnSched
 
-LearnSched is a platform for students allowing to easily manage their tasks, assignments and deadlines, focus on studies and much more.
+LearnSched is a platform for students allowing to easily manage their tasks, assignments and deadlines, focus on studies and much more. (WIP)
 
 ## Run Locally
 

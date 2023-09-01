@@ -1,19 +1,19 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
 
 <div id="navbarWrap">
-    <div class="navbarEntry" onclick="window.location.href='/overview/'" id="overview">
+    <div class="navbarEntry" onclick="window.location.href=`{{ url_for('main.overview') }}`" id="overview">
         <i class="fa-solid fa-house"></i>
     </div>
-    <div class="navbarEntry" onclick="window.location.href='/todos/'" id="todos">
+    <div class="navbarEntry" onclick="window.location.href=`{{ url_for('main.todos') }}`" id="todos">
         <i class="fa-solid fa-check"></i>
     </div>
-    <div class="navbarEntry" onclick="window.location.href='/calendar/'" id="calendar">
+    <div class="navbarEntry" onclick="window.location.href=`{{ url_for('main.calendar') }}`" id="calendar">
         <i class="fa-solid fa-calendar"></i>
     </div>
-    <div class="navbarEntry" onclick="window.location.href='/timer/'" id="timer">
+    <div class="navbarEntry" onclick="window.location.href=`{{ url_for('main.timer') }}`" id="timer">
         <i class="fa-solid fa-clock"></i>
     </div>
-    <div class="navbarEntry bottomEntry" onclick="window.location.href='/settings/'" id="settings">
+    <div class="navbarEntry bottomEntry" onclick="window.location.href=`{{ url_for('main.settings') }}`" id="settings">
         <i class="fa-solid fa-user"></i>
     </div>
 </div>
