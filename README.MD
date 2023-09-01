@@ -23,10 +23,16 @@ Install dependencies
   pip install -r requirements.txt
 ```
 
+Set Flask settings
+
+```
+  set FLASK_APP = app
+```
+
 Start the server
 
 ```bash
-  python app.py
+  flask run
 ```
 
 

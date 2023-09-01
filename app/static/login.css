@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    align-items: center;
+}
+
+.loginWrap {
+    background-color: white;
+    width: 40%;
+    margin-left: 30%;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.loginWrap h1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
