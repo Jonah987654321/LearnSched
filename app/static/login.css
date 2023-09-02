@@ -2,6 +2,20 @@
     outline: none;
 }
 
+@media screen and (max-width:750px) {
+    .loginWrap {
+        min-height: 100vh;
+        width: 100% !important;
+        border-radius: 0px !important;
+    }
+}
+
+@media screen and (min-width:750px) and (max-width:1500px) {
+    .loginWrap {
+        width: 50% !important;
+    }
+}
+
 .loginWrap {
     background-color: white;
     width: 30%;
@@ -24,7 +38,7 @@
     text-align: left;
 }
 
-.loginFieldWrap input {
+.loginFieldWrap input:not([type=checkbox]) {
     border: none;
     border-bottom: 2px solid rgb(172, 170, 170);
     margin-bottom: 40px;
@@ -32,6 +46,10 @@
     font-size: 120%;
     padding: 10px;
     padding-left: 30px;
+}
+
+.loginFieldWrap input[type=checkbox] {
+    margin-bottom: 20px;
 }
 
 .loginFieldWrap input:focus {
@@ -42,10 +60,18 @@
     color: rgb(95, 93, 93);
 }
 
+.loginFieldWrap input.errorInput {
+    border-bottom: 2px solid red;
+}
+
 .inputIcon {
     transform: translate(0, -72px);
     color: rgb(172, 170, 170);
     font-size: 120%;
+}
+
+.errorIndicator {
+    color: red;
 }
 
 .forgotPwd {

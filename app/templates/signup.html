@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login | LearnSched</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='basic.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/load/all.css') }}">
+    </head>
+    <body>
+        <div class="loginWrap">
+            <h1>Create a new account</h1>
+            <form method="post" action="/signup">
+                <div class="loginFieldWrap">
+                    {% if emailUsed %}
+                        <label for="email">Name</label><br>
+                        <input type="text" name="name" id="name" placeholder="Enter your name"  value="{{ name }}" required>
+                        <i class="fa-solid fa-user inputIcon"></i><br>
+
+                        <label for="email">E-Mail</label><br>
+                        <input type="email" name="email" id="email" placeholder="Enter your E-Mail" value="{{ email }}" class="errorInput errorIndicator" required>
+                        <i class="fa-solid fa-fa-envelope inputIcon errorIndicator"></i><br>
+                        <div class="alignRight forgotPwd errorIndicator">
+                            <p>Email already used</p>
+                        </div>
+                    {% else %}
+                        <label for="name">Name</label><br>
+                        <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                        <i class="fa-solid fa-user inputIcon"></i><br>    
+
+                        <label for="email">E-Mail</label><br>
+                        <input type="email" name="email" id="email" placeholder="Enter your E-Mail" required>
+                        <i class="fa-solid fa-envelope inputIcon"></i><br>
+                    {% endif %}
+
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                    <i class="fa-solid fa-lock inputIcon"></i><br>
+                    
+                </div>
+                <button type="submit" id="loginButton">Sign Up</button>
+
+                <p class="sectionTitle">Already have an account?</p>
+                <div id="signUpRef">
+                    <a href="{{ url_for('auth.login') }}">Login</a>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

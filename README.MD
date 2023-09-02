@@ -23,6 +23,12 @@ Install dependencies
   pip install -r requirements.txt
 ```
 
+Set the Environment variables
+
+```
+  See below
+```
+
 Set Flask settings
 
 ```
@@ -34,6 +40,14 @@ Start the server
 ```bash
   flask run
 ```
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`SQLITE_KEY`
+
+`SQLITE_URI`
 
 
 ## Roadmap

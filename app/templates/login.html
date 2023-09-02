@@ -12,15 +12,37 @@
             <h1>Login</h1>
             <form method="post" action="/login">
                 <div class="loginFieldWrap">
-                    <label for="email">E-Mail</label><br>
-                    <input type="text" name="email" id="email" placeholder="Enter your E-Mail">
-                    <i class="fa-solid fa-at inputIcon"></i><br>
-                    <label for="password">Password</label><br>
-                    <input type="text" name="password" id="password" placeholder="Enter your password">
-                    <i class="fa-solid fa-lock inputIcon"></i><br>
-                    <div class="alignRight forgotPwd">
-                        <p>Forgot password?</p>
-                    </div>
+
+                    {% if wrongLogin%}
+                        <label for="email">E-Mail</label><br>
+                        <input type="email" name="email" id="email" placeholder="Enter your E-Mail" class="errorInput" required>
+                        <i class="fa-solid fa-envelope inputIcon errorIndicator"></i><br>
+                        <div class="alignRight forgotPwd errorIndicator">
+                            <p>Invalid Login. Please check your e-mail and password</p>
+                        </div>
+                    
+                        <label for="password">Password</label><br>
+                        <input type="password" name="password" id="password" placeholder="Enter your password" class="errorInput" required>
+                        <i class="fa-solid fa-lock inputIcon errorIndicator"></i><br>
+                        <div class="alignRight forgotPwd">
+                            <p>Forgot password?</p>
+                        </div>
+                    {% else %}
+                        <label for="email">E-Mail</label><br>
+                        <input type="email" name="email" id="email" placeholder="Enter your E-Mail" required>
+                        <i class="fa-solid fa-envelope inputIcon"></i><br>
+
+                        <label for="password">Password</label><br>
+                        <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                        <i class="fa-solid fa-lock inputIcon"></i><br>
+                        <div class="alignRight forgotPwd">
+                            <p>Forgot password?</p>
+                        </div>
+                    {% endif %}
+
+                    <label for="remember">
+                        <input type="checkbox" id="remember" name="remember"> Keep me logged in
+                    </label>
                 </div>
                 <button type="submit" id="loginButton">Login</button>
 
