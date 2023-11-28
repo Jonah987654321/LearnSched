@@ -61,3 +61,31 @@
     margin-bottom: 5px;
     font-size: smaller;
 }
+
+.dayDisplayDetailSeperator {
+    margin-top: 10px;
+}
+
+.calendarEntry {
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.colorMarker {
+    display: inline-block;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.red {
+    background-color: rgb(196, 17, 17);
+}
+
+.blue {
+    background-color: rgb(35, 91, 196);
+}

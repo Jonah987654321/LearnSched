@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Your ToDos | LearnSched</title>
+        <title>Calendar | LearnSched</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='basic.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='calendar.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/load/all.css') }}">
@@ -19,78 +19,25 @@
                     <div class="dayDisplayRound dateHeader">F</div>
                     <div class="dayDisplayRound dateHeader">S</div>
                     <div class="dayDisplayRound dateHeader">S</div>
-                    <div class="dayDisplayRound">1</div>
-                    <div class="dayDisplayRound">2</div>
-                    <div class="dayDisplayRound">3</div>
-                    <div class="dayDisplayRound">4</div>
-                    <div class="dayDisplayRound">5</div>
-                    <div class="dayDisplayRound">6</div>
-                    <div class="dayDisplayRound">7</div>
-                    <div class="dayDisplayRound">8</div>
-                    <div class="dayDisplayRound">9</div>
-                    <div class="dayDisplayRound">10</div>
-                    <div class="dayDisplayRound">11</div>
-                    <div class="dayDisplayRound">12</div>
-                    <div class="dayDisplayRound">13</div>
-                    <div class="dayDisplayRound">14</div>
-                    <div class="dayDisplayRound">15</div>
-                    <div class="dayDisplayRound">16</div>
-                    <div class="dayDisplayRound">17</div>
-                    <div class="dayDisplayRound today">18</div>
-                    <div class="dayDisplayRound">19</div>
-                    <div class="dayDisplayRound">20</div>
-                    <div class="dayDisplayRound">21</div>
-                    <div class="dayDisplayRound">22</div>
-                    <div class="dayDisplayRound">23</div>
-                    <div class="dayDisplayRound">24</div>
-                    <div class="dayDisplayRound">25</div>
-                    <div class="dayDisplayRound">26</div>
-                    <div class="dayDisplayRound">27</div>
-                    <div class="dayDisplayRound">28</div>
-                    <div class="dayDisplayRound">29</div>
-                    <div class="dayDisplayRound">30</div>
-                    <div class="dayDisplayRound">31</div>
-                    <div class="dayDisplayRound otherMonth">1</div>
-                    <div class="dayDisplayRound otherMonth">2</div>
-                    <div class="dayDisplayRound otherMonth">3</div>
+                    {% for date in dates %}
+                    <div class="dayDisplayRound {{date['tag']}}">{{ date['date']}}</div>
+                    {% endfor %}
                 </div>
             </div>
             <div id="monthDisplay">
-                <div class="dayDisplayDetail">Mo</div>
-                <div class="dayDisplayDetail">Di</div>
-                <div class="dayDisplayDetail">Mi</div>
-                <div class="dayDisplayDetail">Do</div>
-                <div class="dayDisplayDetail">Fr</div>
-                <div class="dayDisplayDetail">Sa</div>
-                <div class="dayDisplayDetail">So</div>
-                <div class="dayDisplayDetail">Mo</div>
-                <div class="dayDisplayDetail">Di</div>
-                <div class="dayDisplayDetail">Mi</div>
-                <div class="dayDisplayDetail">Do</div>
-                <div class="dayDisplayDetail">Fr</div>
-                <div class="dayDisplayDetail">Sa</div>
-                <div class="dayDisplayDetail">So</div>
-                <div class="dayDisplayDetail">Mo</div>
-                <div class="dayDisplayDetail">Di</div>
-                <div class="dayDisplayDetail">Mi</div>
-                <div class="dayDisplayDetail">Do</div>
-                <div class="dayDisplayDetail">Fr</div>
-                <div class="dayDisplayDetail">Sa</div>
-                <div class="dayDisplayDetail">So</div>
-                <div class="dayDisplayDetail">Mo</div>
-                <div class="dayDisplayDetail">Di</div>
-                <div class="dayDisplayDetail">Mi</div>
-                <div class="dayDisplayDetail">Do</div>
-                <div class="dayDisplayDetail">Fr</div>
-                <div class="dayDisplayDetail">Sa</div>
-                <div class="dayDisplayDetail">So</div>
-                <div class="dayDisplayDetail">Mo</div>
-                <div class="dayDisplayDetail">Di</div>
-                <div class="dayDisplayDetail">Mi</div>
-                <div class="dayDisplayDetail">Do</div>
-                <div class="dayDisplayDetail">Fr</div>
-                <div class="dayDisplayDetail">Sa</div>
-                <div class="dayDisplayDetail">So</div>
+                {% for date in dates %}
+                <div class="dayDisplayDetail {{date['tag'] if date['tag']!='today'}}" id="{{date['id']}}">
+                    {{ date['date']}}
+                    <div class="dayDisplayDetailSeperator"></div>
+                    {% for entry in entries[date['id']] %}
+                        {% if entry['fullDay'] %}
+                            <div class="calendarEntry {{ entry['color'] }}">{{ entry['title'] }}</div>
+                        {% else %}
+                            <div class="calendarEntry"><span class="colorMarker {{ entry['color'] }}"></span>{{ entry['startTime'] }}: {{ entry['title'] }}</div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endfor %}
             </div>
 
         </div>
