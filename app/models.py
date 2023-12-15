@@ -21,3 +21,9 @@ class Todos(db.Model):
     done = db.Column(db.Integer)
     userID = db.Column(db.Integer)
     listID = db.Column(db.Integer)
+
+class Calendars(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(256))
+    userID = db.Column(db.Integer)
+

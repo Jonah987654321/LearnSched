@@ -89,3 +89,16 @@
 .blue {
     background-color: rgb(35, 91, 196);
 }
+
+.newEntry {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 38px;
+    background-color: #c991c0;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
