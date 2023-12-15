@@ -16,8 +16,8 @@ class TodoLists(db.Model):
 class Todos(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     task = db.Column(db.String(1000))
-    dueDate = db.Column(db.String(11))
-    reminder = db.Column(db.String(11))
+    dueDate = db.Column(db.DateTime())
+    reminder = db.Column(db.DateTime())
     done = db.Column(db.Integer)
     userID = db.Column(db.Integer)
     listID = db.Column(db.Integer)
@@ -26,4 +26,12 @@ class Calendars(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(256))
     userID = db.Column(db.Integer)
+
+class CalendarEntry(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(256))
+    startTime = db.Column(db.DateTime())
+    endTime = db.Column(db.DateTime())
+    allDayEvent = db.Column(db.Boolean)
+    calendarID = db.Column(db.Integer)
 

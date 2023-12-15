@@ -40,10 +40,87 @@
                 {% endfor %}
             </div>
 
-            <button type="button" class="newEntry" title="Create new entry">
-                <i class="fa-solid fa-plus"></i>
+            <div id="newEntryUnderlay" class="hidden">
+                <div class="newEntryOverlay">
+                    <h1>Create new calendar entry</h1>
+                    <br>
+                    <form method="post">
+                        <label for="eventTitle">Event Title:</label>
+                        <input type="text" id="eventTitle" name="eventTitle" required>
+                        
+                        <div class="dateEntryContainer">
+                            <div class="dateEntryBox" style="flex: 70;">
+                                <label for="eventDate">Date:</label>
+                                <input type="date" id="eventDate" name="eventDate" required>
+                            </div>
+                            <div class="dateEntryBox" style="flex: 30; padding-left: 30px;">
+                                <label for="fullDay">All Day</label>
+                                <label class="switch">
+                                    <input type="checkbox" id="fullDay" name="fullDay">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="dateEntryContainer">
+                            <div class="timeEntryBox">
+                                <label for="startTime">Start Time:</label>
+                                <input type="time" id="startTime" name="startTime" required>
+                            </div>
+                            <div class="timeEntryBox">
+                                <label for="endTime">End Time:</label>
+                                <input type="time" id="endTime" name="endTime" required>
+                            </div>
+                        </div>
+                
+                        <label for="eventDescription">Description:</label>
+                        <textarea id="eventDescription" name="eventDescription" rows="4"></textarea>
+                
+                        <button type="submit">Create Entry</button>
+                    </form>
+                </div>
+            </div>
+
+            <button type="button" id="newEntryBtn" title="Create new entry" onclick="toggleForm();">
+                <i class="fa-solid fa-plus newEntryBtnNotToggled" id="newEntryBtnIcon"></i>
             </button>
 
         </div>
     </body>
+
+    <script>
+        var opened = false;
+
+        function toggleForm() {
+            document.getElementById('newEntryUnderlay').classList.toggle('hidden');
+            document.getElementById('newEntryBtnIcon').classList.toggle('newEntryBtnToggled');
+            opened = !opened;
+        }
+
+        document.getElementById("fullDay").addEventListener("change", switchChange)
+
+        function switchChange(e) {
+            if (e.target.checked) {
+                document.getElementById("endTime").value = null;
+                document.getElementById("endTime").disabled = true;
+                document.getElementById("endTime").required = false;
+
+                document.getElementById("startTime").value = null;
+                document.getElementById("startTime").disabled = true;
+                document.getElementById("startTime").required = false;
+            } else {
+                document.getElementById("endTime").disabled = false;
+                document.getElementById("endTime").required = true;
+                document.getElementById("startTime").disabled = false;
+                document.getElementById("startTime").required = true;
+            }
+        }
+
+        window.addEventListener("keydown", keyObserver)
+
+        function keyObserver(e) {
+            if (e.key === "Escape" && opened ) {
+                toggleForm();
+            }
+        }
+    </script>
 </html>

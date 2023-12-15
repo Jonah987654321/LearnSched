@@ -23,3 +23,7 @@
 body {
     background-image: url('svg/blurry-gradient.svg');
 }
+
+.hidden {
+    display: none !important;
+}

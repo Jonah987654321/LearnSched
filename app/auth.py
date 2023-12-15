@@ -32,7 +32,10 @@ def login_post():
 
 @auth.route("/signup/")
 def signup():
-    return render_template("signup.html")
+    if current_user.is_authenticated:
+        return redirect(url_for('main.overview'))
+    else:
+        return render_template("signup.html")
 
 @auth.route("/signup/", methods=["POST"])
 def signup_post():
