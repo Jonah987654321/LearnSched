@@ -23,13 +23,16 @@ def create_app():
     def load_user(userID):
         return models.User.query.get(int(userID))
 
-    # blueprint for auth routes in our app
-    from .auth import auth as auth_blueprint
+    # blueprint for auth routes of app
+    from .auth.auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint)
 
     # blueprint for non-auth parts of app
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
+
+    from .todos.todos import todos as todo_blueprint
+    app.register_blueprint(todo_blueprint, url_prefix="/todos")
 
     with app.app_context():
         db.create_all()

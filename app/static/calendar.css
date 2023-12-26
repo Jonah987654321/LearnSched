@@ -118,29 +118,6 @@
     }
 }
 
-#newEntryUnderlay {
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.219);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.newEntryOverlay {
-    background-color: white;
-    width: 50%;
-    display: block;
-    overflow: auto;
-    border-radius: 20px;
-    color: black;
-    padding: 20px;
-}
-
 .newEntryOverlay label {
     display: block;
     margin-bottom: 8px;

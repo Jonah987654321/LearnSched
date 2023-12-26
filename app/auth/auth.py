@@ -1,19 +1,19 @@
 from flask import Blueprint, render_template, url_for, redirect, request
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
-from .models import User
-from . import db
+from ..models import User
+from .. import db
 
-auth = Blueprint("auth", __name__)
+auth = Blueprint("auth", __name__, template_folder='templates', static_folder='static')
 
-@auth.route("/login/")
+@auth.route("/login/", methods=["GET"])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('main.overview'))
     else:
-        return render_template("login.html")
+        return render_template("auth/login.html")
 
-@auth.route("/login", methods=["POST"])
+@auth.route("/login/", methods=["POST"])
 def login_post():
     # login code goes here
     email = request.form.get("email")
@@ -35,7 +35,7 @@ def signup():
     if current_user.is_authenticated:
         return redirect(url_for('main.overview'))
     else:
-        return render_template("signup.html")
+        return render_template("auth/signup.html")
 
 @auth.route("/signup/", methods=["POST"])
 def signup_post():

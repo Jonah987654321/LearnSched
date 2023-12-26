@@ -13,11 +13,6 @@ def home():
 def overview():
     return render_template('overview.html', name=current_user.name)
 
-@main.route("/todos/")
-@login_required
-def todos():
-    return render_template('todos.html')
-
 @main.route("/calendar/")
 @login_required
 def calendar():

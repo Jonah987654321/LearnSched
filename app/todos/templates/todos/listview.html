@@ -11,8 +11,13 @@
         {% include "navbar.html" %}
         <div id="mainWrap">
             <div id="listsWrap">
-                <div class="alignCenter">
-                    <h2>Your To-Do Lists</h2>
+                <div class="listsWrapHeader">
+                    <div id="LWH_title">
+                        <h2>Your To-Do Lists</h2>
+                    </div>
+                    <div id="LWH_plus">
+                        <button class="invisButton" onclick="document.getElementById('newTodoListOverlay').classList.toggle('hidden')"><i class="fa-solid fa-plus" title="Create a new To-Do List"></i></button>
+                    </div>
                 </div>
                 <div class="spaceVert"></div>
 
@@ -137,5 +142,46 @@
             </div>
 
         </div>
+
+        <div class="underlay hidden" id="newTodoListOverlay">
+            <div class="overlay">
+                <h2>Create new To-Do List</h2><br>
+                <form action="/todos/new-list" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="icon">Icon:</label>
+                    <input type="text" id="icon" name="icon">
+                    
+                    <input type="submit" value="Create List">
+                </form>
+            </div>
+        </div>
     </body>
+
+    <script>
+        var stars = document.getElementById("listContentWrap").getElementsByClassName("fa-star");
+        for (var i=0; i<stars.length; i++) {
+            stars[i].addEventListener('mouseenter', function(e) {
+                e.target.classList.toggle("fa-regular");
+                e.target.classList.toggle("fa-solid");
+            });
+            stars[i].addEventListener('mouseleave', function(e) {
+                e.target.classList.toggle("fa-regular");
+                e.target.classList.toggle("fa-solid");
+            });
+        }
+
+        var checkers = document.getElementById("listContentWrap").getElementsByClassName("fa-circle");
+        for (var i=0; i<checkers.length; i++) {
+            checkers[i].addEventListener('mouseenter', function(e) {
+                e.target.classList.toggle("fa-circle");
+                e.target.classList.toggle("fa-circle-check");
+            });
+            checkers[i].addEventListener('mouseleave', function(e) {
+                e.target.classList.toggle("fa-circle");
+                e.target.classList.toggle("fa-circle-check");
+            });
+        }
+    </script>
 </html>
