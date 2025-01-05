@@ -1,19 +1,23 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
 
 <div id="navbarWrap">
-    <div class="navbarEntry" onclick="window.location.href=`{{ url_for('main.overview') }}`" id="overview">
+    <div class="navbarEntry" onclick="window.location.href=`{{ url_for('main.overview') }}`" id="overview" title="Overview">
         <i class="fa-solid fa-house"></i>
     </div>
-    <div class="navbarEntry" onclick="window.location.href=`{{ url_for('todos.todos_main') }}`" id="todos">
+    <div class="navbarEntry" onclick="window.location.href=`{{ url_for('todos.todos_main') }}`" id="todos" title="To-Dos">
         <i class="fa-solid fa-check"></i>
     </div>
-    <div class="navbarEntry" onclick="window.location.href=`{{ url_for('main.calendar') }}`" id="calendar">
+    <div class="navbarEntry" onclick="window.location.href=`{{ url_for('main.calendar') }}`" id="calendar" title="Calendar">
         <i class="fa-solid fa-calendar"></i>
     </div>
-    <div class="navbarEntry" onclick="window.location.href=`{{ url_for('main.timer') }}`" id="timer">
+    <div class="navbarEntry" onclick="window.location.href=`{{ url_for('main.timer') }}`" id="timer" title="Learn Timer">
         <i class="fa-solid fa-clock"></i>
     </div>
-    <div class="navbarEntry bottomEntry" onclick="window.location.href=`{{ url_for('main.settings') }}`" id="settings">
+    <div class="navbarEntry" onclick="window.location.href=``" id="timer" title="Habit tracker">
+        <i class="fa-solid fa-chart-line"></i>
+    </div>
+
+    <div class="navbarEntry bottomEntry" onclick="window.location.href=`{{ url_for('main.settings') }}`" id="settings" title="Settings">
         <i class="fa-solid fa-user"></i>
     </div>
 </div>
